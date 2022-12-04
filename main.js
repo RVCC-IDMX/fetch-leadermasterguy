@@ -6,10 +6,11 @@ fetch('https://unsplash.it/600/400').then(res => res.blob()).then(blob => {
     img.src = URL.createObjectURL(blob);
     document.querySelector('body').appendChild(img);
 })
-
-const postSelection = document.querySelector('#posts');
-const postTemplate = document.querySelector('#post-template');
 */
+
+const postSection = document.querySelector('#posts');
+const postTemplate = document.querySelector('#post-template');
+
 getData().catch(err => console.log(err));
 
 async function getData() {
@@ -28,7 +29,7 @@ async function getData() {
             const body = post.body;
 
             fetch('https://unsplash.it/300/200').then(res => res.blob()).then(blob => {
-                const newPost = document.importNode(postTemplate.textContent, true);
+                const newPost = document.importNode(postTemplate.content, true);
                 const postTitle = newPost.querySelector('.post__title');
                 const postBody = newPost.querySelector('.post__body');
                 const postImg = newPost.querySelector('.post__img')
