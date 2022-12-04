@@ -38,7 +38,7 @@ async function getData() {
 
                 postImg.src = URL.createObjectURL(blob);
                 postTitle.innerText = title;
-                postBody.innetText = body;
+                postBody.innerText = body;
                 postSection.appendChild(newPost);
                 
             }).catch(err => console.log(err));
